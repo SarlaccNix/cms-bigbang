@@ -1,11 +1,11 @@
 import type { CollectionConfig } from 'payload/types'
 
 import richText from '../../fields/richText'
-import { tenant } from '../../fields/tenant'
-import { loggedIn } from './access/loggedIn'
-import { tenantAdmins } from './access/tenantAdmins'
-import { tenants } from './access/tenants'
 import formatSlug from './hooks/formatSlug'
+import { tenant } from '../../fields/tenant'
+import { loggedIn } from '../Shared/access/loggedIn'
+import { tenantAdmins } from '../Shared/access/tenantAdmins'
+import { tenants } from '../Shared/access/tenants'
 
 export const Pages: CollectionConfig = {
   slug: 'pages',

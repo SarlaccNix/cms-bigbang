@@ -7,8 +7,8 @@ export const Tenants: CollectionConfig = {
   slug: 'tenants',
   access: {
     create: superAdmins,
-    read: tenantAdmins,
-    update: tenantAdmins,
+    read: superAdmins,
+    update: superAdmins,
     delete: superAdmins,
   },
   admin: {
