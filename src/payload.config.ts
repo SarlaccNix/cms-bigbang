@@ -12,13 +12,14 @@ import dotenv from 'dotenv'
 import { Media } from './collections/Media/Media'
 import { Heros } from './collections/Heros'
 import { Home } from './globals/Home'
+import { ProductosTitulo } from './collections/ProductosTitulo'
 
 dotenv.config({
   path: path.resolve(__dirname, '../.env'),
 })
 
 export default buildConfig({
-  collections: [Users, Tenants, Pages, Media, Heros],
+  collections: [Users, Tenants, Pages, Media, Heros, ProductosTitulo],
   admin: {
     bundler: webpackBundler(),
     webpack: config => ({

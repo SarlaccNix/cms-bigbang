@@ -5,11 +5,11 @@ import { tenants } from "../Shared/access/tenants";
 import { loggedIn } from "../Shared/access/loggedIn";
 import { tenantAdmins } from "../Shared/access/tenantAdmins";
 
-export const Heros: CollectionConfig = {
-  slug: "heros",
+export const ProductosTitulo: CollectionConfig = {
+  slug: "tituloproductos",
   admin: {
     useAsTitle: "titulo",
-    defaultColumns: ["titulo", "imagen", "updatedAt"],
+    defaultColumns: ["titulo", "subtitulo", "updatedAt"],
   },
   access: {
     read: tenants,
@@ -28,13 +28,32 @@ export const Heros: CollectionConfig = {
       name: "subtitulo",
       label: "Subtitulo",
       index: true,
-      type: "text"
+      type: "text",
     },
     {
-      name: "imagen",
-      label: "Imagen",
+      name: "logo",
+      label: "Logo",
       type: "upload",
       relationTo: "media",
+    },
+    {
+      name: "slider",
+      label: "Slider",
+      type: "array",
+      required: false,
+      fields: [
+        {
+          name: "productoImagen",
+          label: "Imagen del producto",
+          type: "upload",
+          relationTo: "media",
+        },
+        {
+          name: "productoTitulo",
+          label: "Titulo del producto",
+          type: "text",
+        },
+      ],
     },
     tenant,
   ],

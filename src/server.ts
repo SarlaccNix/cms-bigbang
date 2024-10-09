@@ -20,10 +20,10 @@ const start = async () => {
     },
   });
 
-  if (process.env.PAYLOAD_SEED === 'true') {
-    payload.logger.info('---- SEEDING DATABASE ----')
-    await seed(payload);
-  }
+  // if (process.env.PAYLOAD_SEED === 'true') {
+  //   payload.logger.info('---- SEEDING DATABASE ----')
+  //   await seed(payload);
+  // }
 
   // Add your own express routes here
 
