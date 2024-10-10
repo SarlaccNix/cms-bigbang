@@ -19,7 +19,7 @@ dotenv.config({
 })
 
 export default buildConfig({
-  collections: [Users, Tenants, Pages, Media, Heros, ProductosTitulo],
+  collections: [Users, Tenants, Pages, Media, Heros, ProductosTitulo, Home],
   admin: {
     bundler: webpackBundler(),
     webpack: config => ({
@@ -41,7 +41,6 @@ export default buildConfig({
     schemaOutputFile: path.resolve(__dirname, 'generated-schema.graphql'),
   },
   //plugins: [payloadCloud()],
-  globals: [Home],
   db: mongooseAdapter({
     url: process.env.DATABASE_URI,
   }),

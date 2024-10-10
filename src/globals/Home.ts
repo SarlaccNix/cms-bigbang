@@ -1,19 +1,15 @@
-import { isSuperAdmin } from "../utilities/isSuperAdmin";
-import { tenantAdmins } from "../collections/Shared/access/tenantAdmins";
-import type { GlobalConfig } from "payload/types";
+import { tenantAdmins } from "../collections/Users/access/tenantAdmins";
+import { tenant } from "../fields/tenant";
+import type { CollectionConfig } from "payload/types";
+import { loggedIn } from "../collections/Shared/access/loggedIn";
+import { tenants } from "../collections/Shared/access/tenants";
 
-export const Home: GlobalConfig = {
+export const Home: CollectionConfig = {
   access: {
-    read: ({ req: { user } }) => {
-      return (
-        (!user?.lastLoggedInTenant?.id && isSuperAdmin(user)) || {
-          // list of documents
-          tenant: {
-            equals: user?.lastLoggedInTenant?.id,
-          },
-        }
-      );
-    },
+    read: tenants,
+    create: loggedIn,
+    update: tenantAdmins,
+    delete: tenantAdmins,
   },
   fields: [
     {
@@ -36,7 +32,7 @@ export const Home: GlobalConfig = {
         },
       ],
     },
+    tenant
   ],
-  slug: "Home",
-  label: "Home",
+  slug: "home",
 };

@@ -1,6 +1,7 @@
 import express from 'express'
 import payload from 'payload'
 import { seed } from './seed'
+import homeEndpoint from './routes/homeRoute'
 
 require('dotenv').config()
 const app = express()
@@ -16,6 +17,7 @@ const start = async () => {
     secret: process.env.PAYLOAD_SECRET,
     express: app,
     onInit: async () => {
+      app.use(homeEndpoint);
       payload.logger.info(`Payload Admin URL: ${payload.getAdminURL()}`)
     },
   });
