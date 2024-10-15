@@ -7,6 +7,10 @@ import { tenantAdmins } from "../Shared/access/tenantAdmins";
 
 export const ProductosTitulo: CollectionConfig = {
   slug: "tituloproductos",
+  labels: {
+    singular: "Contenido",
+    plural: "Contenido"
+  },
   admin: {
     useAsTitle: "titulo",
     defaultColumns: ["titulo", "subtitulo", "updatedAt"],

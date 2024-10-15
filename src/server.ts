@@ -2,6 +2,8 @@ import express from 'express'
 import payload from 'payload'
 import { seed } from './seed'
 import homeEndpoint from './routes/homeRoute'
+import productoEndpoint from './routes/productoRoutes'
+import contactoEndpoint from './routes/contacto-route'
 
 require('dotenv').config()
 const app = express()
@@ -18,14 +20,16 @@ const start = async () => {
     express: app,
     onInit: async () => {
       app.use(homeEndpoint);
+      app.use(productoEndpoint);
+      app.use(contactoEndpoint);
       payload.logger.info(`Payload Admin URL: ${payload.getAdminURL()}`)
     },
   });
 
-  // if (process.env.PAYLOAD_SEED === 'true') {
-  //   payload.logger.info('---- SEEDING DATABASE ----')
-  //   await seed(payload);
-  // }
+  if (process.env.PAYLOAD_SEED === 'true') {
+    payload.logger.info('---- SEEDING DATABASE ----')
+    await seed(payload);
+  }
 
   // Add your own express routes here
 

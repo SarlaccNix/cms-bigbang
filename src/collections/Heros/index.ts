@@ -7,6 +7,10 @@ import { tenantAdmins } from "../Shared/access/tenantAdmins";
 
 export const Heros: CollectionConfig = {
   slug: "heros",
+  labels: {
+    plural: "Banner",
+    singular: "Banner"
+  },
   admin: {
     useAsTitle: "titulo",
     defaultColumns: ["titulo", "imagen", "updatedAt"],

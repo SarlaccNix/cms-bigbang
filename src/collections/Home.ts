@@ -1,8 +1,8 @@
-import { tenantAdmins } from "../collections/Users/access/tenantAdmins";
+import { tenantAdmins } from "./Users/access/tenantAdmins";
 import { tenant } from "../fields/tenant";
 import type { CollectionConfig } from "payload/types";
-import { loggedIn } from "../collections/Shared/access/loggedIn";
-import { tenants } from "../collections/Shared/access/tenants";
+import { loggedIn } from "./Shared/access/loggedIn";
+import { tenants } from "./Shared/access/tenants";
 
 export const Home: CollectionConfig = {
   access: {
@@ -10,6 +10,10 @@ export const Home: CollectionConfig = {
     create: loggedIn,
     update: tenantAdmins,
     delete: tenantAdmins,
+  },
+  labels: {
+    singular: "Home",
+    plural: "Home"
   },
   fields: [
     {

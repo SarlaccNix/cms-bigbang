@@ -11,15 +11,17 @@ import { Pages } from './collections/Pages'
 import dotenv from 'dotenv'
 import { Media } from './collections/Media/Media'
 import { Heros } from './collections/Heros'
-import { Home } from './globals/Home'
+import { Home } from './collections/Home'
 import { ProductosTitulo } from './collections/ProductosTitulo'
+import { ContactUs } from './collections/ContactUs'
+import { Productos } from './collections/Productos'
 
 dotenv.config({
   path: path.resolve(__dirname, '../.env'),
 })
 
 export default buildConfig({
-  collections: [Users, Tenants, Pages, Media, Heros, ProductosTitulo, Home],
+  collections: [Users, Tenants, Media, Heros, ProductosTitulo, Home, ContactUs, Productos], // Pages
   admin: {
     bundler: webpackBundler(),
     webpack: config => ({
