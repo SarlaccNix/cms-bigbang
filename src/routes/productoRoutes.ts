@@ -36,9 +36,11 @@ router.get('/api/productos-by-tenant', async (req, res) => {
         // Eliminar ambos campos 'tenant'
         data.docs = data.docs.map(doc => {
             // Eliminar 'tenant' del nivel de la raíz
+            // @ts-ignore
             const { tenant, ...restOfDoc } = doc;
 
             // Eliminar 'tenant' dentro de 'imagen'
+            // @ts-ignore
             const { tenant: tenantImagen, ...restOfImage } = doc.imagen as any;
 
             return {

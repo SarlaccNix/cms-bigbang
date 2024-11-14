@@ -33,6 +33,7 @@ router.get('/api/contacto-by-tenant', async (req, res) => {
         }
 
         data.docs = data.docs.map(doc => {
+            // @ts-ignore
             const { tenant, ...rest } = doc;
             return rest;
         })
