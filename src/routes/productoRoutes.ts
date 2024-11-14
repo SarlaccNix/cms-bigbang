@@ -20,6 +20,7 @@ router.get('/api/productos-by-tenant', async (req, res) => {
     try {
         // Buscar el global "Home" asociado al tenant
         const data = await payload.find({
+            // @ts-ignore
             collection: 'productos',
             limit: 1,
             where: {
