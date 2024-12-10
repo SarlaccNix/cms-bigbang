@@ -2,7 +2,7 @@ import type { PayloadRequest } from 'payload/dist/types'
 
 import { isSuperAdmin } from '../../../utilities/isSuperAdmin'
 
-const logs = false
+const logs = true
 
 export const isSuperOrTenantAdmin = async (args: { req: PayloadRequest }): Promise<boolean> => {
   const {
