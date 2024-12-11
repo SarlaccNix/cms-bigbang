@@ -4,8 +4,11 @@
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "strict": false,
+    "noEmitOnError": false,
     "esModuleInterop": true,
     "skipLibCheck": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "forceConsistentCasingInFileNames": false,
     "outDir": "./dist",
     "rootDir": "./src",
     "jsx": "react",
@@ -15,7 +18,7 @@
     }
   },
   "include": ["src"],
-  "exclude": ["node_modules", "dist", "build"],
+  "exclude": ["node_modules", "dist"],
   "ts-node": {
     "transpileOnly": true,
     "swc": true

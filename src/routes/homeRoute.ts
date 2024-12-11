@@ -23,6 +23,7 @@ router.get('/api/home-info', async (req, res) => {
     try {
         // Buscar el global "Home" asociado al tenant
         const homeGlobal = await payload.find({
+            // @ts-ignore
             collection: 'home',
             limit:1,
             where: {

@@ -50,6 +50,10 @@ export const Users: CollectionConfig = {
           value: 'super-admin',
         },
         {
+          label: 'Admin',
+          value: 'admin'
+        },
+        {
           label: 'User',
           value: 'user',
         },
