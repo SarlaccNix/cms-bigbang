@@ -21,7 +21,10 @@ dotenv.config({
 })
 
 export default buildConfig({
-  collections: [Users, Tenants, Media, Heros, ProductosTitulo, Home, ContactUs, Productos], // Pages
+  collections: [Users, Tenants, Media, ProductosTitulo, Home, 
+    ContactUs,
+    Productos
+  ], // Pages
   admin: {
     bundler: webpackBundler(),
     webpack: config => ({

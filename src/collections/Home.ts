@@ -8,8 +8,8 @@ export const Home: CollectionConfig = {
   access: {
     read: tenants,
     create: loggedIn,
-    update: tenantAdmins,
-    delete: tenantAdmins,
+    // update: tenantAdmins,
+    // delete: tenantAdmins,
   },
   labels: {
     singular: "Home",
@@ -17,16 +17,14 @@ export const Home: CollectionConfig = {
   },
   fields: [
     {
-      name: "Hero",
-      label: "Hero Section",
-      relationTo: "heros",
-      type: "relationship",
-    },
-    {
       name: "Secciones",
       label: "Secciones",
       type: "array",
       required: false,
+      labels:{
+        singular: "Seccion",
+        plural: "Secciones"
+      },
       fields: [
         {
           name: "catalogo",
