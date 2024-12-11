@@ -10,7 +10,7 @@ export const Media: CollectionConfig = {
     staticURL: '/media',
     staticDir: 'media',
     adminThumbnail: 'thumbnail',
-    mimeTypes: ['image/*'],
+    mimeTypes: ['image/*','video/*'],
   },
   access: {
     read: tenants,

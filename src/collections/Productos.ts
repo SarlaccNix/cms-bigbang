@@ -9,8 +9,8 @@ export const Productos: CollectionConfig = {
     access: {
         read: tenants,
         create: loggedIn,
-        update: tenantAdmins,
-        delete: tenantAdmins,
+        // update: tenantAdmins,
+        // delete: tenantAdmins,
     },
     labels: {
         singular: "Producto",
@@ -19,13 +19,13 @@ export const Productos: CollectionConfig = {
     fields: [
         {
             name: "imagen",
-            label: "Imagen del producto",
+            label: "Imagen",
             type: "upload",
             relationTo: "media",
         },
         {
             name: "titulo",
-            label: "Titulo del producto",
+            label: "Nombre",
             type: "text",
         },
         {

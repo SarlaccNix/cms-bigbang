@@ -8,8 +8,8 @@ import { tenantAdmins } from "../Shared/access/tenantAdmins";
 export const ProductosTitulo: CollectionConfig = {
   slug: "tituloproductos",
   labels: {
-    singular: "Contenido",
-    plural: "Contenido"
+    singular: "Seccion",
+    plural: "Secciones"
   },
   admin: {
     useAsTitle: "titulo",
@@ -18,8 +18,8 @@ export const ProductosTitulo: CollectionConfig = {
   access: {
     read: tenants,
     create: loggedIn,
-    update: tenantAdmins,
-    delete: tenantAdmins,
+    // update: tenantAdmins,
+    // delete: tenantAdmins,
   },
   fields: [
     {
@@ -48,13 +48,13 @@ export const ProductosTitulo: CollectionConfig = {
       fields: [
         {
           name: "productoImagen",
-          label: "Imagen del producto",
+          label: "Imagen",
           type: "upload",
           relationTo: "media",
         },
         {
           name: "productoTitulo",
-          label: "Titulo del producto",
+          label: "Titulo",
           type: "text",
         },
       ],
