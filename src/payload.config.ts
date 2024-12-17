@@ -25,6 +25,7 @@ export default buildConfig({
     ContactUs,
     Productos
   ], // Pages
+  cors: "*",
   admin: {
     bundler: webpackBundler(),
     webpack: config => ({
