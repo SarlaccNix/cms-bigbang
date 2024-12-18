@@ -7,7 +7,7 @@ import { tenant } from '../../fields/tenant'
 export const Media: CollectionConfig = {
   slug: 'media',
   upload: {
-    staticURL: '/media',
+    staticURL: '/images',
     staticDir: 'media',
     adminThumbnail: 'thumbnail',
     mimeTypes: ['image/*','video/*'],
