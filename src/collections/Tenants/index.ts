@@ -16,12 +16,23 @@ export const Tenants: CollectionConfig = {
   },
   admin: {
     useAsTitle: 'name',
+    defaultColumns: ['name', 'domains'],
+  },
+  labels: {
+    singular: 'Tenant',
+    plural: 'Tenants',
   },
   fields: [
     {
       name: 'name',
       type: 'text',
       required: true,
+      validate: (val: string) => {
+        if (!val || val.trim().length === 0) {
+          return 'Name is required and cannot be empty'
+        }
+        return true
+      },
     },
     {
       name: 'domains',
