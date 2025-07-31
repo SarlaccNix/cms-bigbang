@@ -2,12 +2,13 @@ import type { CollectionConfig } from 'payload/types'
 
 import { superAdmins } from '../../access/superAdmins'
 import { tenantAdmins } from './access/tenantAdmins'
+import { tenants } from '../Shared/access/tenants'
 
 export const Tenants: CollectionConfig = {
   slug: 'tenants',
   access: {
     create: superAdmins,
-    read: superAdmins,
+    read: tenants,
     update: superAdmins,
     delete: superAdmins,
   },
