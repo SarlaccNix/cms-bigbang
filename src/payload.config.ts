@@ -38,6 +38,7 @@ export default buildConfig({
         },
       },
     }),
+    disable: false,
   },
   editor: slateEditor({}),
   typescript: {
@@ -45,6 +46,8 @@ export default buildConfig({
   },
   graphQL: {
     schemaOutputFile: path.resolve(__dirname, 'generated-schema.graphql'),
+    disable: false,
+    disablePlaygroundInProduction: false,
   },
   //plugins: [payloadCloud()],
   db: mongooseAdapter({

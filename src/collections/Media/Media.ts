@@ -13,7 +13,7 @@ export const Media: CollectionConfig = {
     mimeTypes: ['image/*','video/*'],
   },
   access: {
-    read: () => true,
+    read: tenants,
     create: loggedIn,
     update: tenantAdmins,
     delete: tenantAdmins,
