@@ -5,6 +5,7 @@ import homeEndpoint from './routes/homeRoute'
 import productoEndpoint from './routes/productoRoutes'
 import contactoEndpoint from './routes/contacto-route'
 import { checkUserRoles } from './utilities/checkUserRoles'
+import { PayloadRequest } from 'payload/types'
 
 require('dotenv').config()
 const app = express()
@@ -21,9 +22,9 @@ const start = async () => {
     express: app,
     onInit: async () => {
       // Middleware to restrict GraphQL access to super admins only
-      app.use('/api/graphql*', async (req, res, next) => {
+      app.use('/api/graphql*', async (req: PayloadRequest, res, next) => {
         try {
-          const user = req.user || (req as any).payloadAPI?.user;
+          const user = req.user;
           if (!user || !checkUserRoles(['super-admin'], user)) {
             return res.status(403).json({ 
               error: 'Access denied. Super admin privileges required.' 
