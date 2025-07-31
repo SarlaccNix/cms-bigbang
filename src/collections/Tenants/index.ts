@@ -2,13 +2,15 @@ import type { CollectionConfig } from 'payload/types'
 
 import { superAdmins } from '../../access/superAdmins'
 import { tenantAdmins } from './access/tenantAdmins'
-import { tenants } from '../Shared/access/tenants'
+import { lastLoggedInTenant } from '../Shared/access/lastLoggedInTenant'
+import { isSuperAdmin } from '../../utilities/isSuperAdmin'
 
 export const Tenants: CollectionConfig = {
   slug: 'tenants',
   access: {
     create: superAdmins,
-    read: tenants,
+    read: ({ req: { user }, data }) => 
+      isSuperAdmin(user) || (user?.lastLoggedInTenant?.id === data?.id),
     update: superAdmins,
     delete: superAdmins,
   },
